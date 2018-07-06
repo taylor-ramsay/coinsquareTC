@@ -7,14 +7,16 @@ class CurrencyPairTrading extends Component {
     constructor(props) {
         super(props)
         this.state = { 
-            accountBalance: null,
-            btcBalance: null,
-            usdAmount: null,
-            btcPrice: null
+            accountBalance: 0,
+            btcBalance: 0,
+            usdAmount: 0,
+            btcAmount: 0,
+            btcPrice: 0,
+            updatedAccBal: 0,
+            updatedBtcBal: 0
         }
         this.formSubmitHandler = this.formSubmitHandler.bind(this)
         this.usdInputHandler = this.usdInputHandler.bind(this)
-        this.btcInputHandler = this.btcInputHandler.bind(this)
     }
 
     componentDidMount() {
@@ -25,34 +27,35 @@ class CurrencyPairTrading extends Component {
 
     formSubmitHandler(e) {
         e.preventDefault()
+        let updatedAccBal = this.state.updatedAccBal
+        let updatedBtcBal = this.state.updatedBtcBal
+        this.props.getAccountBalance(updatedAccBal)
+        this.props.getBtcBalance(updatedBtcBal)
         this.setState({
-            usdAmount: null,
-            btcPrice: null,
-            accountBalance: null
+            usdAmount: 0,
+            btcAmount: 0,
+            updatedAccBal: 0,
+            updatedBtcBal: 0
         })
     }
 
     usdInputHandler(e) {
         let bal = this.props.accountBalance
+        let btcBal = this.props.btcBalance
         let usd = e.target.value
         let ask = this.props.btcPrice.ask
         let btc = usd/ask
+        let updatedAccBal = bal - usd
+        let updatedBtcBal = btcBal + btc
         this.setState({
             usdAmount: usd,
-            btcBalance: usd<=bal ? btc : 0
-        })
-    }
-
-    btcInputHandler(e) {
-        this.setState({
-            btcPrice: e.target.value
+            btcAmount: usd<=bal ? btc : 0,
+            updatedAccBal: updatedAccBal,
+            updatedBtcBal: updatedBtcBal
         })
     }
 
     render() {
-        // console.log(this.props)
-        console.log(this.state)
-
         if(this.props.btcPrice){
             console.log(this.props.btcPrice.ask)
         }
@@ -60,13 +63,15 @@ class CurrencyPairTrading extends Component {
         return (
             <div>
                 <p>Current BTC price: {this.props.btcPrice ? this.props.btcPrice.ask : ""}</p>
-                <p>Current Account Balance: {this.props.accountBalance}</p>
+                <p>USD Balance: {this.props.accountBalance}</p>
+                <p>BTC Balance: {this.props.btcBalance}</p>
 
                 <form onSubmit={this.formSubmitHandler}>
                 <p>USD</p>
                 <input placeholder="Enter your amount" value={this.state.usdAmount} onChange={this.usdInputHandler} />
                 <p>BTC</p>
-                <input placeholder="Display Quote" value={this.state.btcBalance} onChange={this.btcInputHandler}/>
+                <input placeholder="Display Quote" value={this.state.btcAmount} />
+                <button type="submit" value="Submit">Submit</button>
                 </form>
             </div>
         )
