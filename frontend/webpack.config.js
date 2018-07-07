@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const browserPlugin = require('webpack-browser-plugin');
+const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
+
 
 module.exports = {
     devServer: {
@@ -27,5 +28,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './src/index.html'
         }),
+        new HtmlWebpackIncludeAssetsPlugin({ 
+            assets: ['src/styles/styles.css'], 
+            append: true 
+        })
     ],
 }

@@ -1,0 +1,79 @@
+$brand-color-1: #2034e0;
+$brand-color-2: #f7f7f7;
+$brand-color-3: #2F2F2F;
+$brand-color-4: #0c0c0c;
+$brand-color-5: #5f5e5f;
+$font: 'Source Sans Pro', sans-serif;
+$bold: 'font-weight: 900';
+
+body{
+    background-color: $brand-color-3;
+    font-family: $font;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    padding-left: 20px;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    padding-left: 20px;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    padding-left: 20px;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    padding-left: 20px;
+  }
+
+
+form{
+    background-color: $brand-color-2;
+    width: 380px;
+    padding: 55px;
+    display: inline-block;
+    p {
+        font-size: 20px;
+    }
+    input{
+        font-size: 20px;
+        font-weight: 400;
+        height: 45px;
+        width: 100%;
+        padding-left: 0px;
+        border: 2px solid $brand-color-5;
+        background-color: $brand-color-2;
+        outline: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        -ms-appearance: none;
+        -o-appearance: none;
+        appearance: none;
+    }
+    .summary {
+        margin-left: 60px;
+    }
+    .currency-text{
+        color: $brand-color-4;
+        font-size: 20px;
+        font-weight: 600;
+        margin-right: 20px;
+    }
+    .currency-box{
+        height: 45px;
+        width: 100%;
+        border: 2px solid $brand-color-5;
+        margin-bottom: 25px;
+        .currency-text{
+            margin-left: 30px;
+            margin-top: 10px
+        }
+    }
+
+    button {
+        background-color: $brand-color-1;
+        height: 70px;
+        width: 105%;
+        color: $brand-color-2;
+        margin-top: 20px;
+        font-size: 20px;
+    }
+}
