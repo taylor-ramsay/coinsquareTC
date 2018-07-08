@@ -56,25 +56,28 @@ class CurrencyPairTrading extends Component {
     }
 
     render() {
-        if (this.props.btcPrice) {
-            console.log(this.props.btcPrice.ask)
-        }
 
         return (
             <div>
                 <form onSubmit={this.formSubmitHandler}>
-                    <p>Account Balance</p>
+                    <p className="header">Account Balance</p>
                     <div className="summary">
-                        <p><span className="currency-text">USD</span> {this.props.accountBalance}</p>
-                        <p><span className="currency-text">BTC</span> {this.props.btcBalance}</p>
+                        <p><span className="currency-text">USD</span> {parseFloat(this.props.accountBalance).toFixed(2)}</p>
+                        <p><span className="currency-text">BTC</span> {parseFloat(this.props.btcBalance).toFixed(8)}</p>
                     </div>
-                    <p>Trade</p>
-                    <div className="currency-box"><p className="currency-text">USD</p></div>
-                    <input placeholder="Enter your amount" value={this.state.usdAmount} onChange={this.usdInputHandler} />
-                    <p>For</p>
-                    <div className="currency-box"><p className="currency-text">BTC</p></div>
-                    <input placeholder="Display Quote" value={this.state.btcAmount} />
-                    <button type="submit" value="Submit">Trade</button>
+                    <p className="header">Trade</p>
+                    <div className="calculator">
+                        <div className="currency-box">
+                            <p className="currency-text">USD</p>
+                        </div>
+                        <input placeholder="Enter your amount" value={this.state.usdAmount} onChange={this.usdInputHandler} />
+                    </div>
+                    <p className="header">For</p>
+                    <div className="calculator">
+                        <div className="currency-box"><p className="currency-text">BTC</p></div>
+                        <input placeholder="Display Quote" value={this.state.btcAmount} />
+                        <button type="submit" value="Submit">Trade</button>
+                    </div>
                 </form>
             </div>
         )

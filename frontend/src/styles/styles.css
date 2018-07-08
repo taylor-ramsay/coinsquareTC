@@ -2,35 +2,25 @@ body {
   background-color: #2F2F2F;
   font-family: "Source Sans Pro", sans-serif; }
 
-::-webkit-input-placeholder {
-  /* Chrome/Opera/Safari */
-  padding-left: 20px; }
-
-::-moz-placeholder {
-  /* Firefox 19+ */
-  padding-left: 20px; }
-
-:-ms-input-placeholder {
-  /* IE 10+ */
-  padding-left: 20px; }
-
-:-moz-placeholder {
-  /* Firefox 18- */
-  padding-left: 20px; }
-
 form {
   background-color: #f7f7f7;
-  width: 380px;
-  padding: 55px;
+  width: 360px;
+  padding: 0px 55px 55px 55px;
   display: inline-block; }
   form p {
     font-size: 20px; }
+  form .header {
+    margin-left: 15px; }
+  form .calculator {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
   form input {
+    width: calc(100% - 20px);
     font-size: 20px;
     font-weight: 400;
     height: 45px;
-    width: 100%;
-    padding-left: 0px;
+    padding-left: 20px;
     border: 2px solid #5f5e5f;
     background-color: #f7f7f7;
     outline: none;
@@ -40,12 +30,13 @@ form {
     -o-appearance: none;
     appearance: none; }
   form .summary {
-    margin-left: 60px; }
+    margin-left: 30px; }
   form .currency-text {
     color: #0c0c0c;
     font-size: 20px;
     font-weight: 600;
-    margin-right: 20px; }
+    margin-right: 20px;
+    letter-spacing: 1px; }
   form .currency-box {
     height: 45px;
     width: 100%;
@@ -60,6 +51,7 @@ form {
     width: 105%;
     color: #f7f7f7;
     margin-top: 20px;
-    font-size: 20px; }
+    font-size: 20px;
+    letter-spacing: 3px; }
 
 /*# sourceMappingURL=styles.css.map */

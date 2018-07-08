@@ -11,34 +11,30 @@ body{
     font-family: $font;
 }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-    padding-left: 20px;
-  }
-  ::-moz-placeholder { /* Firefox 19+ */
-    padding-left: 20px;
-  }
-  :-ms-input-placeholder { /* IE 10+ */
-    padding-left: 20px;
-  }
-  :-moz-placeholder { /* Firefox 18- */
-    padding-left: 20px;
-  }
 
 
 form{
     background-color: $brand-color-2;
-    width: 380px;
-    padding: 55px;
+    width: 360px;
+    padding: 0px 55px 55px 55px;
     display: inline-block;
     p {
         font-size: 20px;
     }
+    .header {
+            margin-left: 15px;
+        }
+    .calculator {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
     input{
+        width: calc(100% - 20px);
         font-size: 20px;
         font-weight: 400;
         height: 45px;
-        width: 100%;
-        padding-left: 0px;
+        padding-left: 20px;
         border: 2px solid $brand-color-5;
         background-color: $brand-color-2;
         outline: none;
@@ -49,13 +45,14 @@ form{
         appearance: none;
     }
     .summary {
-        margin-left: 60px;
+        margin-left: 30px;
     }
     .currency-text{
         color: $brand-color-4;
         font-size: 20px;
         font-weight: 600;
         margin-right: 20px;
+        letter-spacing: 1px;
     }
     .currency-box{
         height: 45px;
@@ -75,5 +72,7 @@ form{
         color: $brand-color-2;
         margin-top: 20px;
         font-size: 20px;
+        letter-spacing: 3px;
     }
+    
 }
