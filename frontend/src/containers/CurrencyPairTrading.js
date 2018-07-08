@@ -45,8 +45,8 @@ class CurrencyPairTrading extends Component {
         let usd = e.target.value
         let ask = this.props.btcPrice.ask
         let btc = usd / ask
-        let updatedAccBal = usd <= bal ? bal - usd : bal
-        let updatedBtcBal = usd <= bal ? btcBal + btc : btcBal
+        let updatedAccBal = usd <= bal && usd > 0 ? bal - usd : bal
+        let updatedBtcBal = usd <= bal && usd > 0 ? btcBal + btc : btcBal
         this.setState({
             usdAmount: usd,
             btcAmount: usd <= bal ? btc : 0,
