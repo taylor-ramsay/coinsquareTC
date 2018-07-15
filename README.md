@@ -10,13 +10,13 @@ git clone https://github.com/taylor-ramsay/coinsquareTC.git
 
 ```
 ### 2) Install dependancies and launch server (backend)
-In the main directory, run:
+In the main directory, run in terminal:
 ```
 npm install
 node server.js
 ```
 ### 3) Install dependancies and launch server (frontend)
-In the frontend directory, run:
+Open a new tab in Terminal and In the frontend directory run:
 ```
 npm install
 npm start
