@@ -13,7 +13,6 @@ export function getBtcPrice() {
 export const GET_ACCOUNT_BALANCE = 'GET_ACCOUNT_BALANCE'
 
 export function getAccountBalance(newBalance = 0.00) {
-    console.log(newBalance)
     let balance = 0.00
     if(newBalance) {
         balance = newBalance
