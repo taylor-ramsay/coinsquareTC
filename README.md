@@ -16,13 +16,13 @@ npm install
 node server.js
 ```
 ### 3) Install dependancies and launch server (frontend)
-Open a new tab in Terminal and In the frontend directory run:
+Open a new tab in Terminal and in the frontend directory run:
 ```
 npm install
 npm start
 ```
-### 4) Run Test
-Open a new tab in Terminal and In the frontend directory run:
+### 4) Run tests
+Open a new tab in Terminal and in the frontend directory run:
 ```
 jest
 ```
