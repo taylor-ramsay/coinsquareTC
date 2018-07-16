@@ -3,7 +3,7 @@ import axios from 'axios'
 export const GET_BTC_PRICE = 'GET_BTC_PRICE'
 
 export function getBtcPrice() {
-    const request = axios.get('http://localhost:8080/btc-price')
+    let request = axios.get('http://localhost:8080/btc-price')
     return {
         type: GET_BTC_PRICE,
         payload: request

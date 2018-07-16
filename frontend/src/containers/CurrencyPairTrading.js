@@ -21,8 +21,8 @@ class CurrencyPairTrading extends Component {
 
     componentDidMount() {
         this.props.getBtcPrice()
-        this.props.getAccountBalance()
-        this.props.getBtcBalance()
+        this.props.getAccountBalance(this.props.accountBalance)
+        this.props.getBtcBalance(this.props.btcBalance)
     }
 
     formSubmitHandler(e) {
@@ -49,21 +49,20 @@ class CurrencyPairTrading extends Component {
         let updatedBtcBal = usd <= bal && usd > 0 ? btcBal + btc : btcBal
         this.setState({
             usdAmount: usd,
-            btcAmount: usd <= bal ? btc : 0,
+            btcAmount: usd <= bal && usd > 0 ? btc : 0,
             updatedAccBal: updatedAccBal,
             updatedBtcBal: updatedBtcBal
         })
     }
 
     render() {
-
         return (
             <div>
                 <form onSubmit={this.formSubmitHandler}>
                     <p className="header">Account Balance</p>
                     <div className="summary">
-                        <p><span className="currency-text">USD</span> {parseFloat(this.props.accountBalance).toFixed(2)}</p>
-                        <p><span className="currency-text">BTC</span> {parseFloat(this.props.btcBalance).toFixed(8)}</p>
+                        <p><span className="currency-text">USD</span> <span className="usdbal">{parseFloat(this.props.accountBalance).toFixed(2)}</span></p>
+                        <p><span className="currency-text">BTC</span> <span className="btcbal">{parseFloat(this.props.btcBalance).toFixed(8)}</span></p>
                     </div>
                     <p className="header">Trade</p>
                     <div className="calculator">

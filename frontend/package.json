@@ -18,11 +18,14 @@
     "hoek": "^4.2.1",
     "jest": "^23.3.0",
     "jsdom": "^11.11.0",
+    "moxios": "^0.4.0",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "redux-promise": "^0.6.0",
+    "redux-promise-middleware": "^5.1.1",
+    "redux-thunk": "^2.3.0",
     "style-loader": "^0.21.0"
   },
   "devDependencies": {
@@ -34,6 +37,7 @@
     "html-webpack-include-assets-plugin": "^1.0.4",
     "html-webpack-plugin": "^3.2.0",
     "node-sass": "^4.9.1",
+    "redux-mock-store": "^1.5.3",
     "sass-loader": "^7.0.3",
     "webpack": "^4.15.1",
     "webpack-browser-plugin": "^1.0.20",
@@ -44,5 +48,4 @@
   "jest": {
     "setupTestFrameworkScriptFile": "./src/setupTests.js"
   }
-    
 }

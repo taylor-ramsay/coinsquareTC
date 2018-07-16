@@ -6,10 +6,10 @@ import ReduxPromise from 'redux-promise'
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 
-export default props => {
+export default ({ children, initialState = {} }) => {
     return (
-        <Provider store={createStoreWithMiddleware(reducers)}>
-            {props.children}
+        <Provider store={createStoreWithMiddleware(reducers, initialState)}>
+            {children}
         </Provider>
     )
 }
