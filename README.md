@@ -21,3 +21,8 @@ Open a new tab in Terminal and In the frontend directory run:
 npm install
 npm start
 ```
+### 4) Run Test
+Open a new tab in Terminal and In the frontend directory run:
+```
+jest
+```
